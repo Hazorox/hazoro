@@ -15,3 +15,29 @@
 body{
   font-family: pixelated;
 }
+.scrollable {
+  --sb-track-color: transparent;
+  --sb-thumb-color: #a2a19952;
+  --sb-size: 16px;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollable {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
