@@ -65,18 +65,17 @@ function App() {
     window.addEventListener("keydown", listenForKey);
     return () => window.removeEventListener("keydown", listenForKey);
   }, [preSelect, opened, audioOne, audioTwo, switchTo]);
-  console.log(opened, preSelect);
   return (
     <AnimatePresence>
-      <div className="bg-black text-white w-full h-full flex p-8  flex-col items-center gap-16 ">
-        <motion.div className="h-[85%] border-2 border-white/70 w-[90%] p-8 justify-center items-center flex-col gap-4 relative ">
+      <div className="bg-black text-white w-full h-full flex p-8 flex-col items-center gap-16 ">
+        <motion.div className="h-[85%] border-2 border-white/70 w-[90%] justify-center items-center flex-col gap-4 relative ">
           {transitioning && (
             <video
               ref={videoRef}
               autoPlay
               muted
               playsInline
-              className="absolute inset-0 z-50 w-full h-full object-cover"
+              className="absolute inset-0 select-none z-50 w-full h-full object-cover"
               onEnded={() => {
                 setTransitioning(false);
                 if (videoRef.current) videoRef.current.currentTime = 0;
@@ -85,7 +84,7 @@ function App() {
               <source src="./pixels.mp4" type="video/mp4" />
             </video>
           )}
-          {opened == "stats" ? (
+          {transitioning ? null : opened == "stats" ? (
             <Stats />
           ) : opened == "main" ? (
             <Main />
