@@ -34,7 +34,7 @@ const Act = () => {
           <Typewriter
             onInit={(typewriter) => {
               typewriter
-                .pauseFor(2500)
+                .pauseFor(500)
                 // Didn't know which delay was best, so did 67
                 .changeDelay(50)
                 .typeString("Feeling a strange urge to reach out?")
