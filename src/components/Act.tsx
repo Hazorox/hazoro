@@ -60,7 +60,7 @@ const Act = () => {
         {/* Cards */}
         {contacts.map(({ name, icon, value }) => (
           <div
-            className="cursor-pointer basis-[28%] hover:text-orange h-fit text-white"
+            className="cursor-pointer whitespace-nowrap md:basis-[40%] lg:basis-[28%]  hover:text-orange h-fit text-white"
             onClick={() => {
               if (name === "MAIL") {
                 navigator.clipboard.writeText("hamzaawad8899@gmail.com");
@@ -70,7 +70,8 @@ const Act = () => {
               window.open(value, "_blank");
             }}
           >
-            {"["}
+          
+             {"["}
             <span className="mx-2">{icon}</span>•
             <span className="mx-2">{name}</span>
             {"]"}
