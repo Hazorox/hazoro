@@ -1,6 +1,7 @@
 import { type ReactElement } from "react";
-import { FaDiscord, FaMarkdown } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaMarkdown } from "react-icons/fa6";
 import { GrArchlinux } from "react-icons/gr";
+import { IoMdOpen } from "react-icons/io";
 import { IoGlobeOutline, IoLogoJavascript } from "react-icons/io5";
 import { SiAnaconda, SiGodotengine } from "react-icons/si";
 import { TbBrandCpp, TbBrandMinecraft } from "react-icons/tb";
@@ -8,14 +9,44 @@ import { Rating } from "react-simple-star-rating";
 const Stats = () => {
   const skills: [string, ReactElement | string, number][] = [
     ["Full Stack", <IoGlobeOutline />, 4],
-    ["JavaScript", <IoLogoJavascript />, 4],
+    ["JavaScript & Typescript ", <IoLogoJavascript />, 4],
     ["Discord Bots", <FaDiscord />, 4],
     ["Data Science", <SiAnaconda />, 3],
     ["Linux ( ARCH OFC )", <GrArchlinux />, 3],
     ["Markup and Markdown Languages", <FaMarkdown />, 5],
-    ["Minecraft Modding",<TbBrandMinecraft />, 2],
+    ["Minecraft Modding", <TbBrandMinecraft />, 2],
     ["Problem Solving", <TbBrandCpp />, 2],
     ["Game Dev", <SiGodotengine />, 1],
+  ];
+  const projects = [
+    [
+      "Kaizen",
+      "Japanese Immersion Platform",
+      "https://kaizen.appwrite.network",
+      "https://github.com/hazorox/kaizen",
+      "/kaizen.png",
+    ],
+    [
+      "Biomaker",
+      "Linktree with more descriptions",
+      "https://biomaker.netlify.app",
+      "https://github.com/hazorox/biomaker",
+      "/biomaker.png",
+    ],
+    [
+      "DECI Project",
+      "A data analysis project in DECI scholarship",
+      "",
+      "https://github.com/Hazorox/WranglingDeciL3",
+      "/deci.png",
+    ],
+    [
+      "Mado",
+      "A simple game about procrastination",
+      "https://itch.io/idk",
+      "https://github.com/Hazorox/mado",
+      "/mado.png",
+    ],
   ];
   return (
     <div className="flex flex-col overflow-y-auto scrollable items-center p-8 w-full h-full overflow-x-clip">
@@ -34,17 +65,16 @@ const Stats = () => {
                   initialValue={rate}
                   fillIcon={
                     <img
-                
                       src="/heartRed.svg"
                       alt=""
-                      style={{display:"inline-block", width: 64, height: 36}}
+                      style={{ display: "inline-block", width: 64, height: 36 }}
                     />
                   }
                   emptyIcon={
                     <img
                       src="/grayHeart.svg"
                       alt=""
-                      style={{ width: 64, height: 36 ,display:"inline-block"}}
+                      style={{ width: 64, height: 36, display: "inline-block" }}
                     />
                   }
                   iconsCount={5}
@@ -53,6 +83,27 @@ const Stats = () => {
             </div>
           );
         })}
+      </div>
+      <div className="w-full mt-16 grid grid-cols-2 gap-16 p-12 justify-around">
+        {projects.map(([name, text, demo, github, pic]) => (
+          <div className="border-2 max-h-fit pb-8 p-2 flex-col border-[#fffbe6]">
+            <img src={pic} className="w-full h-2/3" />
+            <span className="text-4xl w-full text-center justify-center flex my-2">
+              {name}
+            </span>
+            <span className="flex w-full justify-between">
+              <span className="text-2xl">{text}</span>
+              <span className="flex gap-8 mr-2">
+                {demo&&<a href={demo} className="hover:text-orange" target="_blank">
+                  <IoMdOpen size={32} />
+                </a>}
+                <a href={github} className="hover:text-orange" target="_blank">
+                  <FaGithub size={32} />
+                </a>
+              </span>
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
