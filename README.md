@@ -12,4 +12,9 @@ Contains my languages skills and some projects
 ## 3. ACT Tab ( Contact )
 Contains my links :D
 ![Act Page](images/act.png)
+
+# AI Usage ( Claude ) :
+- Debugging an issue in the tabs navigation with keyboard ( it was fr weird )
+
+
 That's all tysm <3
