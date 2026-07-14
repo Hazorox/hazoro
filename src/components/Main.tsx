@@ -30,8 +30,8 @@ const Main = () => {
         className="w-32 h-32"
         src="https://avatars.githubusercontent.com/u/126866424?s=48&v=4"
       />
-      <div className="text-7xl">Hamza Awad</div>
-      <span className="opacity-75 -mt-2 mb-16">aka Hazoro</span>
+      <div className="text-5xl md:text-7xl">Hamza Awad</div>
+      <span className="opacity-75 -mt-2 mb-4 md:mb-16">aka Hazoro</span>
       {info.map((text, index) => (
         <>
           {currentText == index && (
@@ -59,10 +59,10 @@ const Main = () => {
             return prev + 1;
           });
         }}
-        className="absolute cursor-pointer bottom-2 right-2 flex justify-center items-center sm:gap-2 gap-4"
+        className="absolute select-none cursor-pointer bottom-2 right-2 flex items-center"
       >
         {" "}
-        <img className="w-8 h-8" src="/cKey.png" />or press to advance{" "}
+        <span className="hidden md:flex gap-2 justify-center items-center mx-2 -mt-1"><img className="w-8 h-8" src="/cKey.png" /> | press to advance</span>{" "}
         <IoTriangle className="rotate-90" />
       </span>
       <span className="w-full text-start"></span>

@@ -18,7 +18,7 @@ body{
 .scrollable {
   --sb-track-color: transparent;
   --sb-thumb-color: #a2a19952;
-  --sb-size: 16px;
+  --sb-size: 12px;
 }
 
 .scrollable::-webkit-scrollbar {

@@ -68,7 +68,7 @@ function App() {
   return (
     <AnimatePresence>
       <div className="bg-black text-white w-full h-full flex p-8 flex-col items-center gap-16 ">
-        <motion.div className="h-[85%] border-2 border-white/70 w-[90%] justify-center items-center flex-col gap-4 relative ">
+        <motion.div className="h-[75%] md:h-[85%] border-2 border-white/70 w-[90%] justify-center items-center flex-col gap-4 relative ">
           {transitioning && (
             <video
               ref={videoRef}
@@ -99,7 +99,7 @@ function App() {
               switchTo("main");
               setPreSelect("main");
             }}
-            className={`cursor-pointer px-4 outline-none   gap-2 border-2 flex justify-around items-center py-4  ${
+            className={`cursor-pointer px-4 outline-none  gap-2 border-2 flex flex-col lg:flex-row lg:justify-around items-center py-4  ${
               opened === "main"
                 ? "border-green!"
                 : preSelect === "main"
@@ -116,7 +116,7 @@ function App() {
 
               setPreSelect("stats");
             }}
-            className={`cursor-pointer outline-none  border-2 gap-1 px-1 py-1 flex justify-around items-center ${
+            className={`cursor-pointer outline-none flex-col lg:flex-row  border-2 gap-1 px-1 py-1 flex lg:justify-around items-center ${
               opened === "stats"
                 ? "border-green!"
                 : preSelect === "stats"
@@ -124,7 +124,7 @@ function App() {
                   : "border-orange hover:border-white/85"
             }`}
           >
-            <PiTreasureChest size={48} /> STATS
+            <PiTreasureChest size={48}/> STATS
           </button>
           <button
             onClick={() => {
@@ -132,7 +132,7 @@ function App() {
               switchTo("act");
               setPreSelect("act");
             }}
-            className={`cursor-pointer outline-none border-2 py-1 flex px-2 justify-between md:justify-center md:gap-6 items-center ${
+            className={`cursor-pointer flex-col lg:flex-row outline-none border-2 py-1 flex px-2 lg:justify-center lg::gap-6 items-center ${
               opened === "act"
                 ? "border-green!"
                 : preSelect === "act"
@@ -140,7 +140,7 @@ function App() {
                   : "border-orange hover:border-white/85"
             }`}
           >
-            <img src="./waves.svg" width={56} height={56} /> ACT
+            <img src="./waves.svg" width={56} height={56} className="-mt-1 lg:mt-0" /> ACT
           </button>
         </motion.div>
       </div>
