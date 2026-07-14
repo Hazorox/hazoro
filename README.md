@@ -2,7 +2,7 @@
 ## By [Hazorox](https://github.com/hazorox)
 Just a simple portfolio I made on the go, coz I realized I have no "About Me" Website :P
 # Main Contents :
-3 Tabs ( Main - Stats - ACT ), navigated twith mouse or keyboar arrows
+3 Tabs ( Main - Stats - ACT ), navigated with mouse, arrows, and WASD
 ## 1. Main Tab 
 Contains my main info in the form of a dialogue, press C or click to continue
 ![Main Page](images/main.png)
